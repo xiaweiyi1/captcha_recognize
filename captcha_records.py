@@ -52,6 +52,7 @@ def conver_to_tfrecords(data_set, name):
   filename = os.path.join(RECORD_DIR, name)
   print('>> Writing', filename)
   writer = tf.python_io.TFRecordWriter(filename)
+  data_set=list(data_set)
   num_examples = len(data_set)
   for index in range(num_examples):
     image = data_set[index][0]
